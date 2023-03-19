@@ -1,3 +1,4 @@
+#221RDC035, Artemijs Zaharovs, 18.gr.
 import os
 def sif(data, i, swaps):
     n = len(data)
