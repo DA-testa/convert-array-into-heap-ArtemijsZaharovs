@@ -26,12 +26,25 @@ def build_heap(data):
 def main():
 
     n = int(input())
-    data = list(map(int, input().split()))
+    data = list(map(int, input().split()))  
     swaps = build_heap(data)
     print(len(swaps))
     for i, j in swaps:
         print(i, j)
 
-
+def heap ():
+   p = input()
+    if 'I' in p:
+        n = int(input())
+        data = list(map(int, input().split()))
+    elif 'F' in p:
+        file_name = input().strip()
+        file_path = os.path.join("tests", file_name)
+        with open(file_path) as file:
+            n = int(file.readline().strip())
+            data = list(map(int, file.readline().strip().split()))
+    else:
+        print('Invalid input method')
+        return
 if __name__ == "__main__":
     main()
