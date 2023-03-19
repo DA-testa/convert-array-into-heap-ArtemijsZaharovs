@@ -1,21 +1,20 @@
-
-def sif (data, i, swaps):
+import os
+def sif(data, i, swaps):
     n = len(data)
-    index = i
+    x = i
     l = 2*i + 1
-    if l < n and data[l] < data[index]:
-        index = l
+    if l < n and data[l] < data[x]:
+        x = l
     r = 2*i + 2
-    if r < n and data[r] < data[index]:
-        index = r
-    if i != index:
-        data[i], data[index] = data[index], data[i]
-        swaps.append((i, index))
-        sif(data, index, swaps)
+    if r < n and data[r] < data[x]:
+        x = r
+    if i != x:
+        data[i], data[x] = data[x], data[i]
+        swaps.append((i, x))
+        sif(data, x, swaps)
 
 
 def build_heap(data):
-    
     n = len(data)
     swaps = []
     for i in range(n//2, -1, -1):
@@ -24,21 +23,11 @@ def build_heap(data):
 
 
 def main():
-
-    n = int(input())
-    data = list(map(int, input().split()))  
-    swaps = build_heap(data)
-    print(len(swaps))
-    for i, j in swaps:
-        print(i, j)
-
-def heap ():
-    p = input()
-
-    if 'I' in p:
+    input_method = input("Enter 'F'  or 'I'  ")
+    if input_method == 'I':
         n = int(input())
         data = list(map(int, input().split()))
-    elif 'F' in p:
+    elif input_method == 'F':
         file_name = input().strip()
         file_path = os.path.join("tests", file_name)
         with open(file_path) as file:
@@ -47,5 +36,12 @@ def heap ():
     else:
         print('Invalid input method')
         return
+    
+    swaps = build_heap(data)
+    print(len(swaps))
+    for i, j in swaps:
+        print(i, j)
+
+
 if __name__ == "__main__":
     main()
