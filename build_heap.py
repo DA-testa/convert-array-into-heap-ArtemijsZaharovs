@@ -33,7 +33,8 @@ def main():
         print(i, j)
 
 def heap ():
-   p = input()
+    p = input()
+
     if 'I' in p:
         n = int(input())
         data = list(map(int, input().split()))
