@@ -22,8 +22,9 @@ def build_heap(data):
     return swaps
 
 
+
 def main():
-    input_method = input("Enter 'F'  or 'I'  ")
+    input_method = input().strip()
     if input_method == 'I':
         n = int(input())
         data = list(map(int, input().split()))
@@ -36,6 +37,7 @@ def main():
     else:
         print('Invalid input method')
         return
+    
     
     swaps = build_heap(data)
     print(len(swaps))
