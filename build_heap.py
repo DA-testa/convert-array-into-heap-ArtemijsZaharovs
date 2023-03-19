@@ -1,4 +1,4 @@
-//221RDC035, Artemijs Zaharovs
+
 def sif (data, i, swaps):
     n = len(data)
     index = i
